@@ -3,12 +3,13 @@ let todo=document.querySelector(".todo-input");
 let date=document.querySelector(".date-input");
 let list=document.querySelector("#list");
 let clear=document.querySelector("#clear");
-let deleteTask=document.querySelector("#delete");
 let header=document.querySelector("h1");
 let deleteBtn=document.querySelector(".delete-button");
 let editButton=document.querySelector(".edit-button");
 let editContainer=document.querySelector(".edit-container");
 let saveBtn=document.querySelector("#save");
+let newTask=document.querySelector("#text-edit");
+let newDate=document.querySelector("#date-edit");
 header.innerHTML="<i class='fas fa-list'></i> To Do List";
 task.addEventListener("click",()=>{
     let taskInput=todo.value;
@@ -31,10 +32,10 @@ task.addEventListener("click",()=>{
     ele.appendChild(dateEle);
     let editBtn=document.createElement("button");
     editBtn.innerHTML="<i class='fas fa-edit'></i>";
-    dateEle.appendChild(editBtn);
+    ele.appendChild(editBtn);
     deleteBtn=document.createElement("button");
     deleteBtn.innerHTML="<i class='fas fa-trash'></i>";
-    dateEle.appendChild(deleteBtn);
+    ele.appendChild(deleteBtn);
     editBtn.classList.add("edit-button");
     deleteBtn.classList.add("delete-button");
     todo.value="";
@@ -46,32 +47,28 @@ task.addEventListener("click",()=>{
     
     editBtn.addEventListener("click",()=>{
         editContainer.style.visibility="visible";
-        let newTask=document.querySelector("#text-edit").value;
-        let newDate=document.querySelector("#date-edit").value;
-        taskEle.textContent=newTask; 
-        dateEle.textContent=newDate;
-
-
+       
+       
+       newTask.value=taskEle.textContent; 
+        newDate.value=dateEle.textContent;
+       
         
 
        
        });
+ 
  saveBtn.addEventListener("click",()=>{
-        
-      editContainer.style.visibility="hidden";
+
+         taskEle.textContent=newTask.value;
+         dateEle.textContent=newDate.value;
+
+        editContainer.style.visibility="hidden";
         
 
        });
-       
-
         
 
         
      
-   clear.addEventListener("click",()=>{
-    list.innerHTML="";
-    if (list.innerHTML!=""){
-        clear.style.display="visible";
-    }
-   }) ;
+  
 });
