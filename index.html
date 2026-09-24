@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my to do list website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="edit-container">
+        <h2>Edit Task</h2>
+        <input type="text" id="text-edit" placeholder="entre new task">
+        <input type="date" id="date-edit" placeholder="DD-MM-YYYY">
+        <button id="save">Save</button>
+    </div>
+   <div class ="container">
+<div class="header">
+    <h1 >To Do List</h1> 
+    <div class="date">
+        
+    <input class="todo-input" type ="text" placeholder="Enter TODO">
+    <input class="date-input" type ="date" placeholder="DD-MM-yyyy">
+    
+    </div>
+  
+    <div class ="task-container">
+        <button id="task">Add Task       +</button>
+    </div>
+    <div class="list-container">
+       <h3 style="color: rgb(3, 3, 3);">Tasks are:</h3> 
+    <ul id="list"></ul>
+        
+
+</div>
+    <div class="button-container">
+        <button id="clear">Clear All</button>
+        
+    </div>
+   </div>
+   <script src="script.js"></script>
+</body>
+</html>
